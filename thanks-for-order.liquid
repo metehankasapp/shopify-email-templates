@@ -66,6 +66,13 @@ delivery_instructions != blank %}
 
             ;
         }
+
+
+        .customer-info__item>p {
+            color: #343434 !important;
+            font-size: 18px !important;
+
+        }
     </style>
 </head>
 
@@ -253,7 +260,7 @@ delivery_instructions != blank %}
                                     <tr>
                                         <td>
                                             <table class="row">
-                                                <tr style="color: #343434 !important; font-size: 18px !important;">
+                                                <tr>
                                                     {% if requires_shipping and shipping_address %}
                                                     <td class="customer-info__item">
                                                         <h4>Adresse d'expédition</h4>
@@ -263,6 +270,7 @@ delivery_instructions != blank %}
                                                     <td class="customer-info__item">
                                                         <h4>Adresse de facturation</h4>
                                                         {{ billing_address | format_address }}
+
                                                     </td>
                                                     {% endif %}
                                                 </tr>
@@ -345,6 +353,20 @@ delivery_instructions != blank %}
                         </td>
                     </tr>
                 </table>
+
+
+                <div style="padding-left: 1rem;padding-right: 1rem;">
+                    <p
+                        style="font-size:18px;color: #343434;font-weight: 700;display: flex; justify-content: baseline; align-items: center; flex-direction: row;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/709/709790.png" alt=""
+                            style="width: 24px;margin-right:5px;">
+                        <span style="font-size:18px;">We are here for you</span>
+                    </p>
+                    <p style="color: #343434;font-weight: 400; font-size:18px;">
+                        Delivering safely to your door <a href="https://fashionwhynot.com/policies/shipping-policy"
+                            style="color: #343434;font-weight: 400; text-decoration: underline;">Here’s how</a>
+                    </p>
+                </div>
 
                 <table class="row section">
                     <tr>
@@ -701,6 +723,7 @@ delivery_instructions != blank %}
             </td>
         </tr>
     </table>
+
 </body>
 
 </html>
