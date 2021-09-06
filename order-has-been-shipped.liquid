@@ -1,30 +1,139 @@
 {% if fulfillment.item_count == item_count %}
 {% capture email_title %}Your order is on the way{% endcapture %}
-{% capture email_body %}Your order is on the way. Track your shipment to see the delivery status.{% endcapture %}
+{% capture email_body %}<div style="margin-top: 4rem">
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">Hi
+        {{ customer.first_name }},</span>
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">
+        Your order is on the way. Track your shipment to see the delivery status.
+    </span>
+    <span style="margin-bottom: 2.5rem; color: #343434; font-size: 18px; display: block">
+        We know you’ll want to get your hands on your order as soon as possible, so make sure that someone is available
+        to receive your package. If you’re not available, simply contact Customer Service to let them know.
+    </span>
+    <a href="{{ fulfillment.tracking_url }}"
+        style="margin-bottom:10px;padding: 1rem 3rem;background-color: #343434;font-size: 18px;color: #fff;font-weight: 700;border-radius: 5px;">
+        Track order progress
+    </a>
+    <span style="margin-bottom: 1rem;margin-top: 40px; color: #343434; font-size: 18px; display: block">
+        Thanks again for shopping with us!
+    </span>
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">
+        {{ shop.name }}
+    </span>
+
+</div>{% endcapture %}
 {% elsif fulfillment.item_count > 1 %}
 {% if fulfillment_status == 'fulfilled' %}
 {% capture email_title %}The last items in your order are on the way{% endcapture %}
-{% capture email_body %}The last items in your order are on the way. Track your shipment to see the delivery
-status.{% endcapture %}
+{% capture email_body %}<div style="margin-top: 4rem">
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">Hi
+        {{ customer.first_name }},</span>
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">
+        The last items in your order are on the way. Track your shipment to see the delivery
+        status.
+    </span>
+    <span style="margin-bottom: 2.5rem; color: #343434; font-size: 18px; display: block">
+        We know you’ll want to get your hands on your order as soon as possible, so make sure that someone is available
+        to receive your package. If you’re not available, simply contact Customer Service to let them know.
+    </span>
+    <a href="{{ fulfillment.tracking_url }}"
+        style="margin-bottom:10px;padding: 1rem 3rem;background-color: #343434;font-size: 18px;color: #fff;font-weight: 700;border-radius: 5px;">
+        Track order progress
+    </a>
+    <span style="margin-bottom: 1rem; margin-top: 40px; color: #343434; font-size: 18px; display: block">
+        Thanks again for shopping with us!
+    </span>
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">
+        {{ shop.name }}
+    </span>
+
+</div>{% endcapture %}
 {% else %}
 {% capture email_title %}Some items in your order are on the way{% endcapture %}
-{% capture email_body %}Some items in your order are on the way. Track your shipment to see the delivery
-status.{% endcapture %}
+{% capture email_body %}<div style="margin-top: 4rem">
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">Hi
+        {{ customer.first_name }},</span>
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">
+        Some items in your order are on the way. Track your shipment to see the delivery
+        status.
+    </span>
+    <span style="margin-bottom: 2.5rem; color: #343434; font-size: 18px; display: block">
+        We know you’ll want to get your hands on your order as soon as possible, so make sure that someone is available
+        to receive your package. If you’re not available, simply contact Customer Service to let them know.
+    </span>
+    <a href="{{ fulfillment.tracking_url }}"
+        style="margin-bottom:10px;padding: 1rem 3rem;background-color: #343434;font-size: 18px;color: #fff;font-weight: 700;border-radius: 5px;">
+        Track order progress
+    </a>
+    <span style="margin-bottom: 1rem; margin-top:40px;color: #343434; font-size: 18px; display: block">
+        Thanks again for shopping with us!
+    </span>
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">
+        {{ shop.name }}
+    </span>
+
+</div>{% endcapture %}
 {% endif %}
 {% else %}
 {% if fulfillment_status == 'fulfilled' %}
 {% capture email_title %}The last item in your order is on the way{% endcapture %}
-{% capture email_body %}The last item in your order is on the way. Track your shipment to see the delivery
-status.{% endcapture %}
+{% capture email_body %}<div style="margin-top: 4rem">
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">Hi
+        {{ customer.first_name }},</span>
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">
+        The last item in your order is on the way. Track your shipment to see the delivery
+        status.
+    </span>
+    <span style="margin-bottom: 2.5rem; color: #343434; font-size: 18px; display: block">
+        We know you’ll want to get your hands on your order as soon as possible, so make sure that someone is available
+        to receive your package. If you’re not available, simply contact Customer Service to let them know.
+    </span>
+    <a href="{{ fulfillment.tracking_url }}"
+        style="margin-bottom:10px;padding: 1rem 3rem;background-color: #343434;font-size: 18px;color: #fff;font-weight: 700;border-radius: 5px;">
+        Track order progress
+    </a>
+    <span style="margin-bottom: 1rem; margin-top:40px;color: #343434; font-size: 18px; display: block">
+        Thanks again for shopping with us!
+    </span>
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">
+        {{ shop.name }}
+    </span>
+
+</div>{% endcapture %}
 {% else %}
 {% capture email_title %}One item in your order is on the way{% endcapture %}
-{% capture email_body %}One item in your order is on the way. Track your shipment to see the delivery
-status.{% endcapture %}
+{% capture email_body %}<div style="margin-top: 4rem">
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">Hi
+        {{ customer.first_name }},</span>
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">
+        One item in your order is on the way. Track your shipment to see the delivery
+        status.
+    </span>
+    <span style="margin-bottom: 2.5rem; color: #343434; font-size: 18px; display: block">
+        We know you’ll want to get your hands on your order as soon as possible, so make sure that someone is available
+        to receive your package. If you’re not available, simply contact Customer Service to let them know.
+    </span>
+    <a href="{{ fulfillment.tracking_url }}"
+        style="margin-bottom:10px;padding: 1rem 3rem;background-color: #343434;font-size: 18px;color: #fff;font-weight: 700;border-radius: 5px;">
+        Track order progress
+    </a>
+    <span style="margin-bottom: 1rem; margin-top:40px;color: #343434; font-size: 18px; display: block">
+        Thanks again for shopping with us!
+    </span>
+    <span style="margin-bottom: 1rem; color: #343434; font-size: 18px; display: block">
+        {{ shop.name }}
+    </span>
+
+</div>{% endcapture %}
 {% endif %}
 {% endif %}
 
 {% capture email_emphasis %}Estimated delivery date:
 <strong>{{fulfillment.estimated_delivery_at | date: "%B %-d, %Y"}}</strong>{% endcapture %}
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -143,7 +252,7 @@ status.{% endcapture %}
                     </tr>
                 </table>
 
-                <table class="row content">
+                <table class="row content" style="margin-top: 4rem;">
                     <tr>
                         <td class="content__cell">
                             <center>
@@ -151,9 +260,9 @@ status.{% endcapture %}
                                     <tr>
                                         <td>
 
-                                            <h2>{{ email_title }}</h2>
+
                                             <p>{{ email_body }}</p>
-                                            {% if fulfillment.estimated_delivery_at %}
+                                            <!-- {% if fulfillment.estimated_delivery_at %}
                                             <p>{{ email_emphasis }}</p>
                                             {% endif %}
                                             {% if order_status_url %}
@@ -202,7 +311,7 @@ status.{% endcapture %}
                                             {% endif %}
 
 
-
+ -->
                                         </td>
                                     </tr>
                                 </table>
